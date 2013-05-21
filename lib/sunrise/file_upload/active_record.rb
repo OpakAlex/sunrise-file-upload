@@ -18,8 +18,7 @@ module Sunrise
           unless self.is_a?(ClassMethods)
             include InstanceMethods
             extend ClassMethods
-            
-            attr_accessible :fileupload_guid
+
             after_save :fileuploads_update, :if => :fileupload_changed?
             
             args.each do |asset|
