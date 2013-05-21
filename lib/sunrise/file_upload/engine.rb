@@ -15,9 +15,9 @@ module Sunrise
         ActiveSupport.on_load :action_view do
           ActionView::Base.send :include, Sunrise::FileUpload::ViewHelper
           ActionView::Helpers::FormBuilder.send :include, Sunrise::FileUpload::FormBuilder
-        
-          ActionView::Helpers::AssetTagHelper.javascript_include_tag "fileupload/fileuploader.js", "fileupload/fileuploader-input.js",
-                                                                     :cache => "fileupload"
+
+          #ActionView::Helpers::AssetTagHelper.register_javascript_expansion :fileupload =>
+          #  ["fileupload/fileuploader.js", "fileupload/fileuploader-input.js"]
         end
       end
     end
