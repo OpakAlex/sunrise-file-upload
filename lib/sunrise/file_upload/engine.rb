@@ -11,14 +11,6 @@ module Sunrise
         ActiveSupport.on_load :active_record do
           ::ActiveRecord::Base.send :include, Sunrise::FileUpload::ActiveRecord
         end
-        
-        ActiveSupport.on_load :action_view do
-          ActionView::Base.send :include, Sunrise::FileUpload::ViewHelper
-          ActionView::Helpers::FormBuilder.send :include, Sunrise::FileUpload::FormBuilder
-
-          #ActionView::Helpers::AssetTagHelper.register_javascript_expansion :fileupload =>
-          #  ["fileupload/fileuploader.js", "fileupload/fileuploader-input.js"]
-        end
       end
     end
   end
